@@ -15,14 +15,15 @@ export const siteConfig: SiteConfig = {
 		fixed: true, // Hide the theme color picker for visitors
 	},
 	banner: {
-		enable: false,
-		src: "assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+		enable: true,
+		src: "assets/images/ghibli.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		position: "center",  // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: false, // Display the credit text of the banner image
 			text: "", // Credit text to be displayed
 			url: "", // (Optional) URL link to the original artwork or artist's page
 		},
+		
 	},
 	toc: {
 		enable: true, // Display the table of contents on the right side of the post
