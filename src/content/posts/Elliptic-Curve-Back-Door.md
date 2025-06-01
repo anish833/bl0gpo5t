@@ -2,11 +2,11 @@
 title: "The Elliptic Curve Backdoor: A Hidden Flaw in Randomness"
 published: 2025-06-02
 updated: 2025-06-02
-description: 'A deep dive into how randomness and elliptic curves intertwine—and how one subtle backdoor almost compromised it all'
-image: 'posts/Elliptic-Curve-Back-Door/cover_ecc.png'
+description: "A deep dive into how randomness and elliptic curves intertwine—and how one subtle backdoor almost compromised it all"
+image: "posts/Elliptic-Curve-Back-Door/cover_ecc.png"
 tags: [Cryptography, Backdoor]
-category: 'Cryptography'
-draft: false 
+category: "Cryptography"
+draft: false
 ---
 
 According to Google, *“Elliptic Curve Cryptography (ECC) is a key-based technique for encrypting data. ECC focuses on pairs of public and private keys for decryption and encryption of web traffic.”*
@@ -80,10 +80,14 @@ This case highlights the complex and often opaque nature of cryptographic standa
 
 ## References
 
-1. [Dual_EC_DRBG - Wikipedia](https://en.wikipedia.org/wiki/Dual_EC_DRBG)  
-2. [On the Possibility of a Back Door in the NIST SP800-90 Dual Ec Prng (PDF)](https://rump2007.cr.yp.to/15-shumow.pdf)  
+1. [Dual_EC_DRBG - Wikipedia](https://en.wikipedia.org/wiki/Dual_EC_DRBG)
+2. [On the Possibility of a Back Door in the NIST SP800-90 Dual Ec Prng](https://rump2007.cr.yp.to/15-shumow.pdf)
 3. [Understanding Dual EC DRBG - Video Explanation](https://youtu.be/nybVFJVXbww)
+4. [Breaking the NIST standard - Research Paper](https://projectbullrun.org/dual-ec/vulnerability.html)
+5. [NIST's Response to the Dual EC DRBG Issue](https://www.nist.gov/news-events/news/2013/09/nist-opens-public-comment-period-revised-cryptographic-standard)
 
-> *Note: The PDF link refers to the original presentation by Dan Shumow and Niels Ferguson at the CRYPTO 2007 Rump Session.*
+:::note
+The second link refers to the original presentation by Dan Shumow and Niels Ferguson at the CRYPTO 2007 Rump Session.
+:::
 
 
