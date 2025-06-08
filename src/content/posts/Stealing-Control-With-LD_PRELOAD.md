@@ -145,7 +145,7 @@ LD_PRELOAD isn’t just a neat party trick — it’s a powerful tool for debugg
 1. Docker Jailbreak: Exploiting CVE-2019-5736 with `runc` Overwrite  
 [Read More →](https://unit42.paloaltonetworks.com/breaking-docker-via-runc-explaining-cve-2019-5736/)
 
-2. Hijacking the Loader: Dynamic Linker Abuse for Stealthy Persistence  
+2. Dynamic Linker Abuse (MITRE)
 [Read More →](https://attack.mitre.org/techniques/T1574/006/)
 
 3. PWN College: Process Loading  
