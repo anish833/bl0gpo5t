@@ -3,7 +3,7 @@ title: "Stealing Control with LD_PRELOAD"
 published: 2025-06-08
 updated: 2025-06-08
 description: "Explore how LD_PRELOAD can hijack Linux binaries at runtime—powerful for both reverse engineering and real-world exploitation"
-image: "posts/ReverseEngineering-With-ls/cover3.jpg"
+image: "posts/ReverseEngineering-With-ls/cover3.png"
 tags: [Reverse Engineering, Hijacking]
 category: "Reverse Engineering"
 draft: false
