@@ -3,7 +3,7 @@ title: "Stealing Control with LD_PRELOAD"
 published: 2025-06-08
 updated: 2025-06-08
 description: "Explore how LD_PRELOAD can hijack Linux binaries at runtime—powerful for both reverse engineering and real-world exploitation"
-image: "posts/ReverseEngineering-With-ls/cover3.png"
+image: "posts/ReverseEngineering-With-ls/cover4.jpg"
 tags: [Reverse Engineering, Hijacking]
 category: "Reverse Engineering"
 draft: false
@@ -145,7 +145,7 @@ LD_PRELOAD isn’t just a neat party trick — it’s a powerful tool for debugg
 1. Docker Jailbreak: Exploiting CVE-2019-5736 with `runc` Overwrite  
 [Read More →](https://unit42.paloaltonetworks.com/breaking-docker-via-runc-explaining-cve-2019-5736/)
 
-2. Hijacking the Loader: Dynamic Linker Abuse for Stealthy Persistence  
+2. Dynamic Linker Abuse (MITRE)
 [Read More →](https://attack.mitre.org/techniques/T1574/006/)
 
 3. PWN College: Process Loading  
