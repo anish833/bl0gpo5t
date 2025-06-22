@@ -11,13 +11,13 @@ draft: false
 
 If you're curious how malware sneaks into Linux systems, bypasses traditional defenses, and runs without raising alarms—you’re in the right place. This blog is a deep dive into the Executable and Linkable Format (ELF), the backbone of all Linux binaries, and how it's abused by threat actors for stealth, persistence, and code execution.
 
-We’ll start by demystifying the structure of ELF files—headers, segments, and sections—before showing you how malware leverages those same internals for evil. Then, you’ll get hands-on experience building and injecting shellcode using tools like LIEF, NASM, and GDB. You’ll learn:
+We’ll start by demystifying the structure of ELF files—headers, segments, and sections—before showing you how malware leverages those same internals for evil. Then, you’ll get hands-on experience building and injecting shellcode using tools like LIEF and NASM. You’ll learn:
 
-🧬 How malware hides code in unused ELF sections
+- How malware hides code in unused ELF sections
 
-🔥 How to build an actual injected binary that runs /bin/ping -c 1 google.com
+- How to build an actual injected binary that runs `/bin/ping -c 1 google.com`
 
-🛡️ How defenders and blue teams detect, reverse, and mitigate ELF-based attacks
+- How defenders and blue teams detect, reverse, and mitigate ELF-based attacks
 
 ## What is ELF
 
@@ -42,10 +42,10 @@ Located at the very start (offset 0)
 
 Includes:
 
-    File type (e.g., executable)
-    Architecture (e.g., x86-64)
-    Entry point address
-    Offsets to PHT and SHT
+- File type (e.g., executable)
+- Architecture (e.g., x86-64)
+- Entry point address
+- Offsets to PHT and SHT
 
 **Malware use-case**: Modify entry point to redirect execution to injected shellcode.
 
@@ -55,11 +55,11 @@ Used by kernel and dynamic linker
 
 Defines memory segments to load:
 
-    PT_LOAD: Code/data segments
+- PT_LOAD: Code/data segments
 
-    PT_INTERP: Path to dynamic linker
+- PT_INTERP: Path to dynamic linker
 
-    PT_DYNAMIC, PT_NOTE: Metadata and linking info
+- PT_DYNAMIC, PT_NOTE: Metadata and linking info
 
 **Malware use-case**: Inject executable code by creating new PT_LOAD segments or hijacking PT_INTERP
 
@@ -69,11 +69,13 @@ Used for linking/debugging, not at runtime
 
 Common sections:
 
-    .text, .data, .bss, .rodata
+- .text, .data, .bss, .rodata
 
-    .init_array, .symtab, .strtab, .rela.plt
+- .init_array, .symtab, .strtab, .rela.plt
 
 **Malware use-case**: Hide payloads in new or unused sections like .evil or .note.*. Abuse .init_array for pre-main() execution.
+
+## Section vs Segments
 
 ![Section vs Segment](posts/Malicious-Mechanics-of-ELF/sectionvssegment.png)
 
@@ -84,7 +86,7 @@ Common sections:
 
 ### Hands on Shell code injection
 
-For this we will create our custom program which we can use to inject shellcode on a section of the binary and walk our way through it
+For this we will create our custom program which we can use to inject shellcode on a segment of the binary and walk our way through it
 
 Let’s start with a simple C program that we’ll hijack using shellcode injection.
 
@@ -311,7 +313,7 @@ Now you can try running the `infected` binary which will run the `ping` command
 
 ![Ping Execution](posts/Malicious-Mechanics-of-ELF/infected.png)
 
-As you can see we have successfully injected shellcode through section and hijacked an existing binary. You could also modify the shellcode to jump back to the original entry point, preserving the binary’s original behavior
+As you can see we have successfully injected shellcode through PT_LOAD segment and hijacked an existing binary. You could also modify the shellcode to jump back to the original entry point, preserving the binary’s original behavior
 
 In this example, we inject our shellcode by adding a new executable segment (PT_LOAD) — not a section. Segments are what the kernel maps into memory during execution, so shellcode injected here will run directly when the program starts
 
