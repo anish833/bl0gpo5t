@@ -1,7 +1,7 @@
 ---
 title: "Malicious Mechanics of ELF: Shellcode, Segments & Stealth"
-published: 2025-06-02
-updated: 2025-06-02
+published: 2025-06-22
+updated: 2025-06-22
 description: "A deep dive into how attackers exploit ELF internals to inject, persist, and execute malicious payloads on Linux systems"
 image: "posts/Malicious-Mechanics-of-ELF/cover.png"
 tags: [Shellcode, Hijacking]
